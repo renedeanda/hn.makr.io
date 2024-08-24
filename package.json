@@ -1,0 +1,28 @@
+{
+  "name": "hn-enhanced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "framer-motion": "^11.3.30",
+    "idb": "^8.0.0",
+    "next": "^14.2.5",
+    "next-themes": "^0.3.0",
+    "postcss": "^8.4.41",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-query": "^3.39.3",
+    "tailwindcss": "^3.4.10"
+  }
+}
