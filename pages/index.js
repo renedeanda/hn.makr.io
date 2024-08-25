@@ -9,22 +9,14 @@ import { motion } from 'framer-motion';
 
 export default function Home() {
   const router = useRouter();
+  const [activeTab, setActiveTab] = useState(router.query.tab || 'news');
   const [keyword, setKeyword] = useState('');
   const [dateFilter, setDateFilter] = useState('all');
   const [sortBy, setSortBy] = useState('score');
 
-  const activeTab = router.query.tab || 'news';
-
   useEffect(() => {
-    // Reset filters when switching tabs
-    setKeyword('');
-    setDateFilter('all');
-    setSortBy('score');
-  }, [activeTab]);
-
-  const handleTabChange = (tab) => {
-    router.push(`/?tab=${tab}`, undefined, { shallow: true });
-  };
+    setActiveTab(router.query.tab || 'news');
+  }, [router.query.tab]);
 
   const handleDateFilterChange = (e) => {
     setDateFilter(e.target.value);
@@ -38,20 +30,10 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
       <SEO 
         title={activeTab === 'news' ? "Latest Tech News" : "Tech Job Listings"}
-        description={`Explore ${activeTab === 'news' ? 'the latest tech news' : 'tech job opportunities'} from Hacker News with enhanced features on HN Enhanced.`}
+        description={`Explore ${activeTab === 'news' ? 'the latest tech news' : 'tech job opportunities'} from Hacker News with enhanced features. Filter, sort, and save your favorite posts with HN Enhanced.`}
       />
-      <Header activeTab={activeTab} setActiveTab={handleTabChange} />
-      <main className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <a 
-            href="https://renedeanda.com?utm_source=hn.makr.io" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-lg text-gray-700 dark:text-gray-300 hover:underline"
-          >
-            Created with 🧡 + 🤖 by René DeAnda
-          </a>
-        </div>
+      <Header activeTab={activeTab} />
+      <main className="container mx-auto px-4 py-8 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
