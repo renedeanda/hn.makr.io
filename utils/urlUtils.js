@@ -1,11 +1,10 @@
-export function getAttributedUrl(url) {
-  if (!url) return '#';
+export function addUtmSource(url) {
   try {
-    const attributedUrl = new URL(url);
-    attributedUrl.searchParams.append('utm_source', 'hn.makr.io');
-    return attributedUrl.toString();
+    const parsedUrl = new URL(url);
+    parsedUrl.searchParams.append('utm_source', 'hn.makr.io');
+    return parsedUrl.toString();
   } catch (error) {
     console.error('Invalid URL:', url);
-    return url; // Return original URL if it's invalid
+    return url;
   }
 }
