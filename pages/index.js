@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import NewsFeed from '../components/NewsFeed';
@@ -9,13 +9,20 @@ import { motion } from 'framer-motion';
 
 export default function Home() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState(router.query.tab || 'news');
   const [keyword, setKeyword] = useState('');
   const [dateFilter, setDateFilter] = useState('all');
   const [sortBy, setSortBy] = useState('score');
 
+  const activeTab = router.query.tab || 'news';
+
+  useEffect(() => {
+    // Reset filters when switching tabs
+    setKeyword('');
+    setDateFilter('all');
+    setSortBy('score');
+  }, [activeTab]);
+
   const handleTabChange = (tab) => {
-    setActiveTab(tab);
     router.push(`/?tab=${tab}`, undefined, { shallow: true });
   };
 
@@ -35,6 +42,16 @@ export default function Home() {
       />
       <Header activeTab={activeTab} setActiveTab={handleTabChange} />
       <main className="container mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <a 
+            href="https://renedeanda.com?utm_source=hn.makr.io" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-lg text-gray-700 dark:text-gray-300 hover:underline"
+          >
+            Created with 🧡 + 🤖 by René DeAnda
+          </a>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
