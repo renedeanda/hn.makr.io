@@ -33,31 +33,31 @@ export default function Home() {
         description={`Explore ${activeTab === 'news' ? 'the latest tech news' : 'tech job opportunities'} from Hacker News with enhanced features. Filter, sort, and save your favorite posts with HN Enhanced.`}
       />
       <Header activeTab={activeTab} />
-      <main className="container mx-auto px-4 py-8 mt-16">
-        <div className="text-center mb-8">
+      <main className="container mx-auto px-4 pt-2 pb-8">
+        <div className="text-center mb-4">
           <a 
             href="https://renedeanda.com?utm_source=hn.makr.io" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-lg text-gray-700 dark:text-gray-300 hover:underline"
+            className="text-sm text-gray-700 dark:text-gray-300 hover:underline"
           >
             Created with 🧡 + 🤖 by René DeAnda
           </a>
         </div>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8"
+          transition={{ duration: 0.3 }}
+          className="mb-4"
         >
           <input
             type="text"
             placeholder="Search..."
-            className="w-full p-2 mb-4 border rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-700"
+            className="w-full p-2 mb-2 border rounded-lg dark:bg-gray-800 dark:text-white dark:border-gray-700"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-2">
             <select
               value={dateFilter}
               onChange={handleDateFilterChange}
