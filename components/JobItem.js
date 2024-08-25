@@ -12,16 +12,16 @@ export default function JobItem({ job, isSaved }) {
           {job.title}
         </a>
       </h2>
-      <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+      <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
         Posted by {job.by} | {jobDate.toLocaleString()}
       </p>
-      <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
         <Link href={`/item/${job.id}`} className="hover:underline">
           View Details
         </Link>
       </p>
       {job.url && (
-        <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 break-words">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 break-words">
           <a href={addUtmSource(job.url)} target="_blank" rel="noopener noreferrer" className="hover:underline">
             {new URL(job.url).hostname}
           </a>
