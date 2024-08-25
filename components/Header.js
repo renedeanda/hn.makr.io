@@ -14,10 +14,14 @@ export default function Header() {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'dark' ? '#1F2937' : '#FFA07A');
   }, [theme]);
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="bg-primary-light dark:bg-gray-800 text-white transition-colors duration-200 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold">
+        <Link href="/" className="text-xl font-bold" onClick={handleLinkClick}>
           HN Enhanced
         </Link>
         <div className="flex items-center">
@@ -32,13 +36,13 @@ export default function Header() {
         </div>
         <nav className={`${isMenuOpen ? 'block' : 'hidden'} md:block absolute md:relative top-full left-0 right-0 md:top-auto bg-primary-light dark:bg-gray-800 md:bg-transparent`}>
           <div className="flex flex-col md:flex-row items-start md:items-center">
-            <Link href="/?tab=news" className={`block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent ${activeTab === 'news' ? 'font-bold' : ''}`}>
+            <Link href="/?tab=news" onClick={handleLinkClick} className={`block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent ${activeTab === 'news' ? 'font-bold' : ''}`}>
               News
             </Link>
-            <Link href="/?tab=jobs" className={`block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent ${activeTab === 'jobs' ? 'font-bold' : ''}`}>
+            <Link href="/?tab=jobs" onClick={handleLinkClick} className={`block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent ${activeTab === 'jobs' ? 'font-bold' : ''}`}>
               Jobs
             </Link>
-            <Link href="/saved" className="block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent">
+            <Link href="/saved" onClick={handleLinkClick} className="block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent">
               Saved
             </Link>
           </div>
