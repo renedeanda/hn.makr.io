@@ -2,30 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply antialiased;
-}
-
 :root {
   --sat: env(safe-area-inset-top);
 }
 
 body {
-  padding-top: calc(var(--sat) + 60px); /* Adjust 60px to match your header height */
+  @apply antialiased bg-gray-100 dark:bg-gray-900;
+  padding-top: calc(var(--sat) + 60px);
 }
 
 .fixed {
   padding-top: var(--sat);
 }
 
-/* Add these new styles for better mobile experience */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
 @media (max-width: 768px) {
   body {
-    padding-top: calc(var(--sat) + 100px); /* Increase padding for mobile */
-  }
-
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-top: calc(var(--sat) + 56px);
   }
 }
