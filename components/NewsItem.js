@@ -12,16 +12,16 @@ export default function NewsItem({ story, isSaved }) {
           {story.title}
         </a>
       </h2>
-      <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+      <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
         {story.score} points by {story.by} | {storyDate.toLocaleString()}
       </p>
-      <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
         <Link href={`/item/${story.id}`} className="hover:underline">
           {story.descendants} comments
         </Link>
       </p>
       {story.url && (
-        <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 break-words">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 break-words">
           <a href={addUtmSource(story.url)} target="_blank" rel="noopener noreferrer" className="hover:underline">
             {new URL(story.url).hostname}
           </a>
