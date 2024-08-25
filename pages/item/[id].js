@@ -27,7 +27,7 @@ export default function ItemPage() {
   if (itemError) return <div>Error loading item: {itemError.message}</div>;
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
       <SEO 
         title={item ? item.title : 'Loading...'}
         description={item ? `View details and comments for "${item.title}" on HN Enhanced.` : 'Loading item details...'}
@@ -37,16 +37,16 @@ export default function ItemPage() {
         {item && (
           <>
             <h1 className="text-2xl font-bold mb-4 break-words">{item.title}</h1>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-8 overflow-hidden">
+            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-8 overflow-hidden transition-colors duration-200">
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 break-words">
                 {item.score} points by {item.by} | {new Date(item.time * 1000).toLocaleString()}
               </p>
               {item.url && (
-                <a href={addUtmSource(item.url)} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-sm break-words block">
+                <a href={addUtmSource(item.url)} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 hover:underline text-sm break-words block">
                   {item.url}
                 </a>
               )}
-              {item.text && <div className="mt-4 text-sm break-words" dangerouslySetInnerHTML={{ __html: item.text }} />}
+              {item.text && <div className="mt-4 text-sm break-words text-gray-800 dark:text-gray-200" dangerouslySetInnerHTML={{ __html: item.text }} />}
             </div>
             <h2 className="text-xl font-semibold mb-4">Comments</h2>
             {commentsLoading ? (
