@@ -1,8 +1,19 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   @apply antialiased;
+}
+
+:root {
+  --sat: env(safe-area-inset-top);
+}
+
+body {
+  padding-top: calc(var(--sat) + 60px); /* Adjust 60px to match your header height */
+}
+
+.fixed {
+  padding-top: var(--sat);
 }
