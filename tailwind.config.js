@@ -14,5 +14,14 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.overflow-wrap-anywhere': {
+          'overflow-wrap': 'anywhere',
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 }
