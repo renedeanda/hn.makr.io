@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header className="bg-primary-light dark:bg-gray-800 text-white transition-colors duration-200 fixed top-0 left-0 right-0 z-50">
-      <div className="w-full px-4 py-3 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold" onClick={handleLinkClick}>
           HN Enhanced
         </Link>
