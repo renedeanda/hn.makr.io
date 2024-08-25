@@ -33,7 +33,7 @@ export default function ItemPage() {
         description={item ? `View details and comments for "${item.title}" on HN Enhanced. Explore comments and insights from the tech community.` : 'Loading item details...'}
       />
       <Header />
-      <main className="container mx-auto px-4 py-8 mt-16 overflow-x-hidden">
+      <main className="container mx-auto px-4 py-8 mt-4 overflow-x-hidden">
         {item && (
           <>
             <h1 className="text-2xl font-bold mb-4 break-words">{item.title}</h1>
