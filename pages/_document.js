@@ -1,12 +1,12 @@
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { GA_TRACKING_ID } from '../utils/analytics'
 
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { GA_TRACKING_ID } from '../utils/analytics';
-
-export default class MyDocument extends Document {
+class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html>
         <Head>
+          <meta name="theme-color" content="#FFA07A" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
@@ -30,6 +30,8 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
+
+export default MyDocument
