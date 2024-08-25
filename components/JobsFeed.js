@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { fetchJobStories, fetchItem } from '../utils/api';
 import JobItem from './JobItem';
 import LoadingIndicator from './LoadingIndicator';
+import EmptyState from './EmptyState';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 export default function JobsFeed({ keyword, dateFilter, sortBy }) {
@@ -27,6 +28,10 @@ export default function JobsFeed({ keyword, dateFilter, sortBy }) {
   if (error) return <div>Error loading jobs: {error.message}</div>;
 
   const allJobs = data ? data.pages.flat() : [];
+
+  if (allJobs.length === 0) {
+    return <EmptyState message="No jobs found. Try adjusting your filters." />;
+  }
 
   return (
     <InfiniteScroll
@@ -70,10 +75,9 @@ function filterAndSortItems(items, keyword, dateFilter, sortBy) {
   }
 
   filteredItems.sort((a, b) => {
-    if (sortBy === 'score') return b.score - a.score;
     if (sortBy === 'date') return b.time - a.time;
-    if (sortBy === 'comments') return (b.descendants || 0) - (a.descendants || 0);
-    return 0;
+    // Jobs don't have scores or comments, so we'll just sort by date for other options
+    return b.time - a.time;
   });
 
   return filteredItems;

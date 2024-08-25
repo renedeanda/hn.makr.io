@@ -37,7 +37,7 @@ export default function SaveButton({ item }) {
           : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-white'
       }`}
     >
-      {isSaved ? 'Saved' : 'Save'}
+      {isSaved ? 'Unsave' : 'Save'}
     </button>
   );
 }

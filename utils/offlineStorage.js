@@ -1,4 +1,3 @@
-// File: utils/offlineStorage.js
 import { openDB } from 'idb';
 
 let dbPromise;
@@ -27,4 +26,11 @@ export async function removeSavedItem(id) {
   if (!dbPromise) return null;
   const db = await dbPromise;
   return db.delete('savedItems', id);
+}
+
+export async function isSaved(id) {
+  if (!dbPromise) return false;
+  const db = await dbPromise;
+  const item = await db.get('savedItems', id);
+  return !!item;
 }

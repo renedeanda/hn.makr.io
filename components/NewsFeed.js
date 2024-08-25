@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { fetchTopStories, fetchItem } from '../utils/api';
 import NewsItem from './NewsItem';
 import LoadingIndicator from './LoadingIndicator';
+import EmptyState from './EmptyState';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 export default function NewsFeed({ keyword, dateFilter, sortBy }) {
@@ -27,6 +28,10 @@ export default function NewsFeed({ keyword, dateFilter, sortBy }) {
   if (error) return <div>Error loading stories: {error.message}</div>;
 
   const allStories = data ? data.pages.flat() : [];
+
+  if (allStories.length === 0) {
+    return <EmptyState message="No stories found. Try adjusting your filters." />;
+  }
 
   return (
     <InfiniteScroll
