@@ -34,7 +34,7 @@ export default function Home() {
       />
       <Header activeTab={activeTab} />
       <main className="container mx-auto px-4 pt-2 pb-8">
-        <div className="text-center mb-4">
+        <div className="text-center mt-2 mb-4">
           <a 
             href="https://renedeanda.com?utm_source=hn.makr.io" 
             target="_blank" 
