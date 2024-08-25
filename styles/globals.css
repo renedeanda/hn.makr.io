@@ -17,3 +17,15 @@ body {
 .fixed {
   padding-top: var(--sat);
 }
+
+/* Add these new styles for better mobile experience */
+@media (max-width: 768px) {
+  body {
+    padding-top: calc(var(--sat) + 100px); /* Increase padding for mobile */
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
