@@ -8,9 +8,9 @@ export default function Header() {
   const activeTab = router.query.tab || 'news';
 
   return (
-    <header className="bg-primary-light dark:bg-primary-dark text-white p-4 transition-colors duration-200">
+    <header className="bg-primary-light dark:bg-primary-dark text-white p-4 transition-colors duration-200 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold hover:underline">
+        <Link href="/" className="text-xl font-bold hover:underline">
           HN Enhanced
         </Link>
         <nav className="flex items-center">
