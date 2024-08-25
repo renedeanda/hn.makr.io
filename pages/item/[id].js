@@ -1,4 +1,4 @@
-import { useRouter } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useQuery } from 'react-query';
 import { fetchItem, fetchComments } from '../../utils/api';
 import Header from '../../components/Header';
@@ -30,7 +30,7 @@ export default function ItemPage() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
       <SEO 
         title={item ? item.title : 'Loading...'}
-        description={item ? `View details and join the discussion for "${item.title}" on HN Enhanced. Explore comments and insights from the tech community.` : 'Loading item details...'}
+        description={item ? `View details and comments for "${item.title}" on HN Enhanced. Explore comments and insights from the tech community.` : 'Loading item details...'}
       />
       <Header />
       <main className="container mx-auto px-4 py-8 mt-16 overflow-x-hidden">
