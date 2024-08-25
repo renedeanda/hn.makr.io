@@ -34,6 +34,16 @@ export default function Home() {
       />
       <Header activeTab={activeTab} />
       <main className="container mx-auto px-4 py-8 mt-16">
+        <div className="text-center mb-8">
+          <a 
+            href="https://renedeanda.com?utm_source=hn.makr.io" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-lg text-gray-700 dark:text-gray-300 hover:underline"
+          >
+            Created with 🧡 + 🤖 by René DeAnda
+          </a>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
