@@ -13,8 +13,8 @@ export default function Comment({ comment, depth = 0 }) {
   const borderColor = colors[depth % colors.length];
 
   return (
-    <div className={`bg-gray-800 p-2 rounded-lg shadow mb-2 border-l-2 ${borderColor}`}>
-      <div className="text-xs text-gray-400 mb-1">
+    <div className={`bg-gray-800 p-2 rounded-lg shadow mb-2 border-l-2 ${borderColor} overflow-hidden`}>
+      <div className="text-xs text-gray-400 mb-1 break-words">
         {comment.by} | {new Date(comment.time * 1000).toLocaleString()}
       </div>
       <button
