@@ -10,7 +10,6 @@ const colors = [
 
 export default function Comment({ comment, depth = 0 }) {
   const [isExpanded, setIsExpanded] = useState(true);
-
   const borderColor = colors[depth % colors.length];
 
   return (
@@ -26,7 +25,10 @@ export default function Comment({ comment, depth = 0 }) {
       </button>
       {isExpanded && (
         <>
-          <div dangerouslySetInnerHTML={{ __html: comment.text }} className="mb-2 text-sm" />
+          <div 
+            dangerouslySetInnerHTML={{ __html: comment.text }} 
+            className="mb-2 text-sm break-words overflow-wrap-anywhere"
+          />
           {comment.kids && comment.kids.map(kid => (
             <Comment key={kid.id} comment={kid} depth={depth + 1} />
           ))}
