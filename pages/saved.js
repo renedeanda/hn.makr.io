@@ -17,10 +17,10 @@ export default function SavedItems() {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
       <SEO 
         title="Saved Items"
-        description="View and manage your saved articles and job listings from HN Enhanced."
+        description="Access your curated collection of saved articles and job listings from HN Enhanced. Easily manage and revisit your favorite tech news and opportunities."
       />
       <Header />
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 mt-16">
         <h1 className="text-3xl font-bold mb-8 text-gray-800 dark:text-white">Saved Items</h1>
         {savedItems && savedItems.length > 0 ? (
           savedItems.map((item) => (
