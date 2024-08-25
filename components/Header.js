@@ -31,14 +31,14 @@ export default function Header() {
           </div>
         </div>
         <nav className={`${isMenuOpen ? 'block' : 'hidden'} md:block absolute md:relative top-full left-0 right-0 md:top-auto bg-primary-light dark:bg-gray-800 md:bg-transparent`}>
-          <div className="flex flex-col md:flex-row items-center">
-            <Link href="/?tab=news" className={`block py-2 px-4 md:inline-block md:mt-0 hover:text-white mr-4 ${activeTab === 'news' ? 'font-bold' : ''}`}>
+          <div className="flex flex-col md:flex-row items-start md:items-center">
+            <Link href="/?tab=news" className={`block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent ${activeTab === 'news' ? 'font-bold' : ''}`}>
               News
             </Link>
-            <Link href="/?tab=jobs" className={`block py-2 px-4 md:inline-block md:mt-0 hover:text-white mr-4 ${activeTab === 'jobs' ? 'font-bold' : ''}`}>
+            <Link href="/?tab=jobs" className={`block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent ${activeTab === 'jobs' ? 'font-bold' : ''}`}>
               Jobs
             </Link>
-            <Link href="/saved" className="block py-2 px-4 md:inline-block md:mt-0 hover:text-white">
+            <Link href="/saved" className="block w-full md:w-auto py-2 px-4 md:inline-block md:mt-0 hover:bg-primary-dark dark:hover:bg-gray-700 md:hover:bg-transparent">
               Saved
             </Link>
           </div>
