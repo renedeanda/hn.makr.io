@@ -1,4 +1,4 @@
-
+// File: pages/saved.js
 import { useQuery } from 'react-query';
 import { getSavedItems } from '../utils/offlineStorage';
 import NewsItem from '../components/NewsItem';

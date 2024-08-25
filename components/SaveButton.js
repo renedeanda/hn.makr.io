@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useMutation, useQueryClient } from 'react-query';
 import { saveItem, removeSavedItem } from '../utils/offlineStorage';
@@ -32,8 +31,10 @@ export default function SaveButton({ item }) {
   return (
     <button
       onClick={handleSave}
-      className={`px-4 py-2 rounded ${
-        isSaved ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-white'
+      className={`px-4 py-2 rounded-lg ${
+        isSaved 
+          ? 'bg-primary-light text-white dark:bg-primary-dark' 
+          : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-white'
       }`}
     >
       {isSaved ? 'Saved' : 'Save'}

@@ -1,4 +1,3 @@
-
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -8,8 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        orange: {
-          500: '#ff6600', // Hacker News orange
+        primary: {
+          light: '#FFA07A', // Light Salmon
+          dark: '#E9967A', // Dark Salmon (for dark mode)
         },
       },
     },
