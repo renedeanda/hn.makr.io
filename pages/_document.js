@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Favicon */}
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
           {/* Primary Meta Tags */}
           <meta name="title" content="HN Enhanced - A Better Hacker News Experience" />
