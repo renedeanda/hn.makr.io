@@ -22,7 +22,6 @@ module.exports = {
         },
       }
       addUtilities(newUtilities)
-    },
-    require('@tailwindcss/line-clamp'),
+    }
   ],
 }
