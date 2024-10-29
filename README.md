@@ -1,17 +1,17 @@
 # hn.makr.io
 
-This repository is part of the **[Makr.io](https://makr.io)** collection—a set of 15 Next.js projects I created with a little help from AI. Whether you're here to learn, reuse, or just explore, I hope you find value in these projects!
+This repository is part of the **[Makr.io](https://makr.io)** collection—a set of 15 Next.js projects I created with the help of AI tools, primarily **Claude.ai** and **ChatGPT**. Whether you're here to learn, reuse, or just explore, I hope you find value in these projects!
 
 ## Overview
 
-**[hn.makr.io](https://hn.makr.io)** is a Next.js app designed to pull in and display data from Hacker News. It’s lightweight, fast, and AI-assisted, meaning it was built with a mix of coding and automated code generation, perfect for anyone curious about combining AI with Next.js development.
+**[hn.makr.io](https://hn.makr.io)** is a Next.js app designed to pull in and display data from Hacker News. It’s lightweight, fast, and AI-assisted, built with a mix of coding and automated code generation, perfect for anyone curious about combining AI with Next.js development.
 
 ## Features
 
 - **Live Data Fetching** from Hacker News
 - **Customizable Layouts** using React components
 - **Fully Responsive** for a seamless experience on any device
-- **Reusable Components** that you can pick and adapt for any other projects
+- **Reusable Components** that you can pick and adapt for other projects
 
 ## Getting Started
 
@@ -55,6 +55,8 @@ This project is open source and available under the MIT License. Feel free to us
 
 Makr.io is a collection of 15 open-source Next.js projects that I created to explore the capabilities of AI in coding. Each project was built with simplicity and adaptability in mind, so you can learn from the code, modify it, and integrate it into your own projects.
 
+These projects were developed with the assistance of **Claude.ai** and **ChatGPT**, both of which helped streamline code generation, design, and implementation.
+
 ## Makr.io Project Collection
 
 Explore the other projects in the Makr.io series:
@@ -76,7 +78,3 @@ Explore the other projects in the Makr.io series:
 - [🎉 Event Countdown](https://countdown.makr.io) - Create countdowns for things you’re looking forward to.
 
 Enjoy exploring, and feel free to reach out with questions or ideas!
-
----
-
-This README now includes links to each project and provides an overview for users to quickly access the other projects in the collection. Let me know if you'd like any tweaks!
