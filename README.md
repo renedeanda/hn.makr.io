@@ -1,5 +1,7 @@
 # hn.makr.io
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 This repository is part of the **[Makr.io](https://makr.io)** collection—a set of 15 Next.js projects I created with the help of AI tools, primarily **Claude.ai** and **ChatGPT**. Whether you're here to learn, reuse, or just explore, I hope you find value in these projects!
 
 ## Overview
